@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "yourdockerhubusername/flask-hello-world"
+        IMAGE_NAME = "alangg92/flask-hello-world"
     }
 
     stages {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/flask-hello-world.git'
+                git 'https://github.com/alanggonzalez/projects.git'
             }
         }
 
