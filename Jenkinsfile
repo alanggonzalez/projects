@@ -15,7 +15,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pipx install -r requirements.txt'
+                sh 'pip install --no-cache-dir --break-system-packages -r requirements.txt'
             }
         }
 
