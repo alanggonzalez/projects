@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "alangg92/flask-hello-world"
+        IMAGE_NAME = "alangg92/projects"
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
                 expression { return env.BRANCH_NAME == 'main' }
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'Alan', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'alangg92', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                         docker push $IMAGE_NAME
